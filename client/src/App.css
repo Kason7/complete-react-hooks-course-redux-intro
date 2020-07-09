@@ -46,3 +46,7 @@
   padding: 5px;
   border: 1px solid gray;
 }
+.button-style:disabled {
+  background-color: #282c34;
+  color: gray;
+}
