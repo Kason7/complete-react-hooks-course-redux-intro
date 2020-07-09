@@ -5,15 +5,17 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 // Setting up redux
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import balanceReducer from './store/balanceReducer';
 import loanReducer from './store/loanReducer';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 const store = createStore(
   combineReducers({
     balanceReducer,
     loanReducer,
-  })
+  }),
+  applyMiddleware(thunk)
 );
 
 ReactDOM.render(
